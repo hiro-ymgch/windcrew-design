@@ -583,35 +583,35 @@ const DesignL = () => (
 // M: Integrated Hero
 const DesignM = () => (
   <div className="min-h-screen bg-white font-sans">
-    <div className="relative h-[80vh] bg-gray-900 overflow-hidden flex items-stretch">
-      <div className="w-full md:w-[70%] relative">
+    <div className="relative h-[80vh] md:h-[80vh] bg-gray-900 overflow-hidden flex flex-col md:flex-row md:items-stretch">
+      <div className="w-full md:w-[70%] relative h-[50vh] md:h-full">
         <HeroImage className="absolute inset-0 h-full" />
-        <div className="absolute bottom-12 left-12 text-white z-10 drop-shadow-lg">
-          <h1 className="text-5xl font-bold mb-2">{COMMON_DATA.orchestraName}</h1>
+        <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 text-white z-10 drop-shadow-lg">
+          <h1 className="text-3xl md:text-5xl font-bold mb-2">{COMMON_DATA.orchestraName}</h1>
         </div>
       </div>
-      <div className="hidden md:flex md:w-[30%] bg-purple-900/90 backdrop-blur-xl text-white flex-col justify-center p-8 relative z-20 shadow-[-20px_0_50px_rgba(0,0,0,0.3)]">
-        <div className="space-y-8">
+      <div className="flex md:w-[30%] bg-purple-900/90 backdrop-blur-xl text-white flex-col justify-center p-6 md:p-8 relative z-20 md:shadow-[-20px_0_50px_rgba(0,0,0,0.3)]">
+        <div className="space-y-6 md:space-y-8">
           <div>
             <span className="block text-purple-300 text-sm font-bold mb-2">UPCOMING</span>
-            <h2 className="text-3xl font-bold leading-tight mb-4">{COMMON_DATA.nextConcert.title}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-4">{COMMON_DATA.nextConcert.title}</h2>
             <div className="space-y-2 text-purple-100">
               <p className="flex items-center gap-3"><Calendar size={18} /> {COMMON_DATA.nextConcert.fullDate}</p>
               <p className="flex items-center gap-3"><MapPin size={18} /> {COMMON_DATA.nextConcert.place}</p>
             </div>
           </div>
-          <div className="pt-8 border-t border-white/20">
-             <button className="w-full py-4 bg-white text-purple-900 font-bold hover:bg-purple-50 transition-colors flex items-center justify-center gap-2">チケット情報・詳細 <ArrowRight size={18}/></button>
+          <div className="pt-6 md:pt-8 border-t border-white/20">
+             <button className="w-full py-3 md:py-4 bg-white text-purple-900 font-bold hover:bg-purple-50 transition-colors flex items-center justify-center gap-2">チケット情報・詳細 <ArrowRight size={18}/></button>
           </div>
         </div>
       </div>
     </div>
     <div className="bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-20 overflow-x-auto">
-           <div className="flex space-x-8 min-w-max">
+        <div className="flex justify-between items-center h-16 md:h-20 overflow-x-auto">
+           <div className="flex space-x-4 md:space-x-8 min-w-max">
              {COMMON_DATA.links.map(link => (
-               <a key={link.id} href="#" className="flex items-center gap-2 text-gray-600 hover:text-purple-600 font-bold transition-colors"><link.icon size={20} />{link.label}</a>
+               <a key={link.id} href="#" className="flex items-center gap-1 md:gap-2 text-gray-600 hover:text-purple-600 font-bold transition-colors text-sm md:text-base"><link.icon size={18} className="md:w-5 md:h-5" /><span className="hidden sm:inline">{link.label}</span></a>
              ))}
            </div>
         </div>
